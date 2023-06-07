@@ -35,7 +35,7 @@ public class ReserveDate {
 
     //날짜를 입력받는 메서드
     public String reserveDate() {
-        SimpleDateFormat date = new SimpleDateFormat("yyyy 년 MM 월 dd 일");
+        SimpleDateFormat date = new SimpleDateFormat("MM 월 dd 일");
         Calendar cal = Calendar.getInstance();
 // 현재 날짜 nowTime
         Date now = cal.getTime();
@@ -45,27 +45,27 @@ public class ReserveDate {
         Date oneDay = cal.getTime();
         String oneDayAfter = date.format(oneDay);
 // 2일 후 날짜 twoDayAfter
-        cal.add(Calendar.DATE, 2);
+        cal.add(Calendar.DATE, 1);
         Date twoDay = cal.getTime();
         String twoDayAfter = date.format(twoDay);
 // 3일 후 날짜 threeDayAfter
-        cal.add(Calendar.DATE, 2);
+        cal.add(Calendar.DATE, 1);
         Date threeDay = cal.getTime();
         String threeDayAfter = date.format(threeDay);
 // 4일 후 날짜 fourDayAfter
-        cal.add(Calendar.DATE, 2);
+        cal.add(Calendar.DATE, 1);
         Date fourDay = cal.getTime();
         String fourDayAfter = date.format(fourDay);
 // 5일 후 날짜 fiveDayAfter
-        cal.add(Calendar.DATE, 2);
+        cal.add(Calendar.DATE, 1);
         Date fiveDay = cal.getTime();
         String fiveDayAfter = date.format(fiveDay);
 // 6일 후 날짜 sixDayAfter
-        cal.add(Calendar.DATE, 2);
+        cal.add(Calendar.DATE, 1);
         Date sixDay = cal.getTime();
         String sixDayAfter = date.format(sixDay);
 // 7일 후 날짜 sevenDayAfter
-        cal.add(Calendar.DATE, 7);
+        cal.add(Calendar.DATE, 1);
         Date sevenDay = cal.getTime();
         String sevenDayAfter = date.format(sevenDay);
 
@@ -76,27 +76,39 @@ public class ReserveDate {
         day = sc.next();
 
         String roomDate = month + " 월 " + day + " 일";
-        System.out.println(roomDate + " 예약 가능한 방 목록입니다.");
 
         // if문에 1일 2일 3일후 까지 다 집어넣으면.. ㅋㅋ?? -> 논의필요
 
         if (roomDate.equals(nowTime)) {
+            System.out.println(roomDate + " 예약 가능한 방 목록입니다.");
             reserve.roomLists();
         } else if (roomDate.equals(oneDayAfter)) {
+            System.out.println(roomDate + " 예약 가능한 방 목록입니다.");
             reserve.roomLists();
         } else if (roomDate.equals(twoDayAfter)) {
+            System.out.println(roomDate + " 예약 가능한 방 목록입니다.");
             reserve.roomLists();
         } else if (roomDate.equals(threeDayAfter)) {
+            System.out.println(roomDate + " 예약 가능한 방 목록입니다.");
             reserve.roomLists();
         } else if (roomDate.equals(fourDayAfter)) {
+            System.out.println(roomDate + " 예약 가능한 방 목록입니다.");
             reserve.roomLists();
         } else if (roomDate.equals(fiveDayAfter)) {
+            System.out.println(roomDate + " 예약 가능한 방 목록입니다.");
             reserve.roomLists();
         } else if (roomDate.equals(sixDayAfter)) {
+            System.out.println(roomDate + " 예약 가능한 방 목록입니다.");
             reserve.roomLists();
         } else if (roomDate.equals(sevenDayAfter)) {
+            System.out.println(roomDate + " 예약 가능한 방 목록입니다.");
             reserve.roomLists();
+        } else {
+            System.out.println("해당 날짜에 예약할 수 없습니다. 다시 입력하세요.");
+            System.out.println("========================================");
+            reserveDate();
         }
+
 
         return nowTime;
 
