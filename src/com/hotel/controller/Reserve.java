@@ -1,11 +1,15 @@
 package com.hotel.controller;
 
+import com.hotel.data.ReserveDate;
+import com.hotel.data.RoomDetail;
 import com.hotel.data.RoomList;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Reserve {
     Scanner sc = new Scanner(System.in);
+    ReserveDate reserveDate = new ReserveDate();
 
     // 시작 화면에 출력될 메시지들입니다.
 // 1. 예약하기 2. 예약확인 3. 예약취소 \\\ 중 1번을 구현하는중
@@ -41,4 +45,11 @@ public class Reserve {
     }
 //RoomDetail의  roomNum은 String인 "1층 101호" 이런것을 말하는건가요?
 
-}
+    public ArrayList<RoomDetail> roomDetails() {
+        ArrayList<RoomDetail> roomDetails = new ArrayList<>();
+        roomDetails.add(new RoomDetail("101호","2인","2 Bed",
+                "time",100000,reserveDate));
+    return roomDetails;
+    }
+
+
