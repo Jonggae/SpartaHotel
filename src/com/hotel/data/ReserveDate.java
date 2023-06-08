@@ -37,6 +37,7 @@ public class ReserveDate {
     public String getYear() {
         return year;
     }
+
     public String[] getDayAfter() {
         return dayAfter;
     }
@@ -61,8 +62,6 @@ public class ReserveDate {
             Date nextDay = cal.getTime();
             dayAfter[i] = date.format(nextDay);
         }
-        System.out.println(dayAfter[0]+dayAfter[1]+"****************");
-
 
         System.out.println("예약을 원하는 날짜를 입력하세요.\n" + dayAfter[0] + "부터 " + dayAfter[7] + "까지 가능합니다. (요일 무관)");
         System.out.print("월 (0도 입력해주세요) ->");
@@ -86,7 +85,7 @@ public class ReserveDate {
             }
         }
         if (isReservationPossible) {
-            System.out.println(inputRoomDate + " 예약 가능한 방 목록입니다.");
+            System.out.println("\n" + inputRoomDate + " 예약 가능한 방 목록입니다.");
             reserve.roomLists();
         } else {
             System.out.println("해당 날짜에 예약할 수 없습니다. 다시 입력하세요.");

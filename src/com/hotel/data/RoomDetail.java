@@ -12,13 +12,13 @@ public class RoomDetail {
     private ArrayList<String> roomDates;
 
     public RoomDetail(String roomNum, String roomCapacity, String roomBed,
-                      String checkTime, int roomPrice, ArrayList<String> roomDates) {
+                      String checkTime, int roomPrice) {
         this.roomNum = roomNum;
         this.roomCapacity = roomCapacity;
         this.roomBed = roomBed;
         this.checkTime = checkTime;
         this.roomPrice = roomPrice;
-        this.roomDates = roomDates;
+//        this.roomDates = roomDates;
     }
 
     ////////
