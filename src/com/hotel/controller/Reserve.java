@@ -9,8 +9,6 @@ import java.util.Scanner;
 
 public class Reserve {
     Scanner sc = new Scanner(System.in);
-//    ReserveDate reserveDate = new ReserveDate();
-
 
     // 시작 화면에 출력될 메시지들입니다.
 // 1. 예약하기 2. 예약확인 3. 예약취소  중 1번을 구현하는중
@@ -23,7 +21,7 @@ public class Reserve {
 // 그 날짜에 해당하는 방 목록을 우선 보여줍니다.
 
 
-    // roomLists 메서드는 층별 방의 정보만 가져옵니다. 날짜연결은?? 아직? 우선 편의상 1층만
+    // roomLists 메서드는 층별 방의 정보만 가져옵니다.
     public ArrayList<RoomList> roomLists() {
         ArrayList<RoomList> roomLists = new ArrayList<>();
         roomLists.add(new RoomList(1, "1층", "101호"));

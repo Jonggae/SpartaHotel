@@ -26,22 +26,6 @@ public class ReserveDate {
 //        this.year = year;
 //    }
 
-    public String getDay() {
-        return day;
-    }
-
-    public String getMonth() {
-        return month;
-    }
-
-    public String getYear() {
-        return year;
-    }
-
-    public String[] getDayAfter() {
-        return dayAfter;
-    }
-
     //날짜를 입력받는 메서드
     public String reserveDate() {
         SimpleDateFormat date = new SimpleDateFormat("MM 월 dd 일");
