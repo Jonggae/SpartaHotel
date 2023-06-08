@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public class RoomDetail {
 
-    private String roomNum;
+    private String roomNum; //호 수
     private String roomCapacity;
     private String roomBed;
     private String checkTime;
     private int roomPrice;
-    private String[] roomDates;
+    private ArrayList<String> roomDates;
 
-    public RoomDetail(String roomNum, String roomCapacity, String roomBed, String checkTime, int roomPrice, String[] roomDates) {
+    public RoomDetail(String roomNum, String roomCapacity, String roomBed,
+                      String checkTime, int roomPrice, ArrayList<String> roomDates) {
         this.roomNum = roomNum;
         this.roomCapacity = roomCapacity;
         this.roomBed = roomBed;
@@ -40,7 +41,32 @@ public class RoomDetail {
         return roomPrice;
     }
 
+    public ArrayList<String> getRoomDates(){
+        return roomDates;
+    }
 
 
+    public void setRoomNum(String roomNum) {
+        this.roomNum = roomNum;
+    }
 
+    public void setRoomCapacity(String roomCapacity) {
+        this.roomCapacity = roomCapacity;
+    }
+
+    public void setRoomBed(String roomBed) {
+        this.roomBed = roomBed;
+    }
+
+    public void setCheckTime(String checkTime) {
+        this.checkTime = checkTime;
+    }
+
+    public void setRoomPrice(int roomPrice) {
+        this.roomPrice = roomPrice;
+    }
+
+    public void setRoomDates(ArrayList<String> roomDates) {
+        this.roomDates = roomDates;
+    }
 }
