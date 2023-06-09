@@ -1,57 +1,34 @@
 package com.hotel.data;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RoomDetail {
 
-    private String roomNum; //호 수
-    private String roomCapacity;
+    private String roomNum;
+    private String roomCapcity;
     private String roomBed;
     private String checkTime;
+    private ArrayList roomDates; //아직 애매함
     private int roomPrice;
-    private ArrayList<String> roomDates;
 
-    public RoomDetail(String roomNum, String roomCapacity, String roomBed,
-                      String checkTime, int roomPrice) {
-        this.roomNum = roomNum;
-        this.roomCapacity = roomCapacity;
-        this.roomBed = roomBed;
-        this.checkTime = checkTime;
-        this.roomPrice = roomPrice;
-//        this.roomDates = roomDates;
-    }
+    private static HashMap<String,RoomDetail> detailList = new HashMap<>();
 
-    ////////
-    public String getRoomNum () {
-        return roomNum;
+    public RoomDetail(String roomNum, String roomCapcity, String roomBed, String checkTime, ArrayList roomDates, int roomPrice){
+        this.roomNum=roomNum;
+        this.roomCapcity=roomCapcity;
+        this.roomBed=roomBed;
+        this.checkTime=checkTime;
+        this.roomDates=roomDates;
+        this.roomPrice=roomPrice;
     }
-    public String getRoomCapacity() {
-        return roomCapacity;
-    }
-
-    public String getRoomBed() {
-        return roomBed;
-    }
-
-    public String getCheckTime() {
-        return checkTime;
-    }
-
-    public int getRoomPrice() {
-        return roomPrice;
-    }
-
-    public ArrayList<String> getRoomDates(){
-        return roomDates;
-    }
-
 
     public void setRoomNum(String roomNum) {
         this.roomNum = roomNum;
     }
 
-    public void setRoomCapacity(String roomCapacity) {
-        this.roomCapacity = roomCapacity;
+    public void setRoomCapcity(String roomCapcity) {
+        this.roomCapcity = roomCapcity;
     }
 
     public void setRoomBed(String roomBed) {
@@ -62,11 +39,55 @@ public class RoomDetail {
         this.checkTime = checkTime;
     }
 
+    public void setRoomDates(ArrayList roomDates) {
+        this.roomDates = roomDates;
+    }
+
     public void setRoomPrice(int roomPrice) {
         this.roomPrice = roomPrice;
     }
 
-    public void setRoomDates(ArrayList<String> roomDates) {
-        this.roomDates = roomDates;
+    public void setDetailList(HashMap<String, RoomDetail> detailList) {
+        this.detailList = detailList;
     }
+
+    public String getRoomNum() {
+        return roomNum;
+    }
+
+    public String getRoomCapcity() {
+        return roomCapcity;
+    }
+
+    public String getRoomBed() {
+        return roomBed;
+    }
+
+    public String getCheckTime() {
+        return checkTime;
+    }
+
+    public ArrayList getRoomDates() {
+        return roomDates;
+    }
+
+    public int getRoomPrice() {
+        return roomPrice;
+    }
+
+    public static HashMap<String, RoomDetail> getDetailList() {
+        return detailList;
+    }
+
+    private static RoomDetail instance; // 싱글톤 인스턴스 변수
+
+    public static RoomDetail getInstance(){
+        if (instance == null) {
+            // 최초 호출 시에만 인스턴스 생성
+            instance = new RoomDetail("default", "default", "default", "default", new ArrayList(), 0);
+        }
+        return instance;
+    }
+
+
 }
